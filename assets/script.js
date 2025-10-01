@@ -20,10 +20,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     // Check for parent pages
     else if (path.includes('/dashboard/parent/')) {
-        const parentPages = ['parent.html', 'academic-health.html', 'attendance-report.html', 'communication-parent.html', 'schedule-meeting.html'];
-        if (parentPages.includes(currentPage)) {
-            sidebarPath = '../../const/leftsidebar-parent.html';
-        }
+        // Sidebar is hardcoded, so just set active link
+        setActiveLink(currentPage);
     }
 
 
