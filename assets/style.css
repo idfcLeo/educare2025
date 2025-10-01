@@ -17,36 +17,15 @@ body {
 
 /* New card style based on reference */
 .dashboard-card-new {
-    background-color: white;
-    border-radius: 1rem; /* Slightly more rounded */
-    border: 1px solid #e2e8f0; /* Softer border */
-    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    @apply bg-white p-6 rounded-xl border border-slate-200 shadow-sm;
 }
 
-.risk-high { border-left: 5px solid #ef4444; }
-.risk-medium { border-left: 5px solid #f59e0b; }
-.risk-low { border-left: 5px solid #22c55e; }
-
-.modal-backdrop {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); z-index: 40;
-}
-.modal-content {
-    position: fixed; top: 50%; left: 50%;
-    transform: translate(-50%, -50%); z-index: 50;
-    max-height: 90vh;
-    overflow-y: auto;
+/* Teacher Dashboard - My Classes Tabs */
+.tab-button {
+    @apply px-1 py-4 border-b-2 border-transparent text-sm font-medium text-slate-500 hover:text-slate-700 hover:border-slate-300;
 }
 
-.dial-needle {
-    position: absolute; bottom: 0; left: 50%; width: 2px; height: 5rem;
-    background-color: #1e293b;
-    border-radius: 9999px 9999px 0 0;
-    transform-origin: bottom;
-    transition: transform 1s ease-in-out;
-}
-
-.input-field {
-    @apply border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500;
+.tab-button.active {
+    @apply border-indigo-500 text-indigo-600;
 }
 

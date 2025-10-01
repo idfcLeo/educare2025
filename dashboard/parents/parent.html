@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Dashboard - Educare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body class="antialiased text-slate-800 bg-slate-50">
+
+    <div class="flex min-h-screen">
+        <!-- Sidebar placeholder -->
+        <aside id="sidebar-container" class="w-64 bg-white p-6 flex flex-col border-r border-slate-200"></aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6 lg:p-10">
+            <h1 class="text-3xl font-bold text-slate-800 mb-8">Welcome, Mrs. Doe</h1>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Left Column -->
+                <div class="space-y-8">
+                    <div class="dashboard-card-new p-6">
+                        <h2 class="text-xl font-bold mb-4 text-center">John's Academic Health</h2>
+                        <div class="dial-container w-full max-w-xs mx-auto">
+                            <!-- Dial will be rendered here by script.js -->
+                        </div>
+                    </div>
+                    <div class="dashboard-card-new p-6">
+                         <h2 class="text-xl font-bold mb-4">Conversation Starters</h2>
+                         <div id="conversation-starters-list" class="space-y-3">
+                            <!-- Starters will be rendered here -->
+                         </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="dashboard-card-new p-6">
+                     <h2 class="text-xl font-bold mb-4">Celebrate the Wins!</h2>
+                     <div id="celebrate-wins-list" class="space-y-4">
+                        <!-- Positive alerts will be rendered here -->
+                     </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../../assets/script.js"></script>
+</body>
+</html>
