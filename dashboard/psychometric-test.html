@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychometric Assessment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="antialiased text-slate-700 bg-slate-100">
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-slate-800">Psychometric Assessment</h1>
+            <p class="text-slate-600 mt-2">This test helps identify factors that may influence your academic journey.</p>
+        </header>
+
+        <main class="bg-white p-6 md:p-8 rounded-xl shadow-lg">
+            <!-- Student Details Form -->
+            <section id="student-details">
+                <h2 class="text-2xl font-bold mb-4">Student Details</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="student-name" class="block text-sm font-medium text-slate-600">Full Name</label>
+                        <input type="text" id="student-name" class="mt-1 w-full input-field" value="Alex Johnson" required>
+                    </div>
+                    <div>
+                        <label for="student-age" class="block text-sm font-medium text-slate-600">Age</label>
+                        <input type="number" id="student-age" class="mt-1 w-full input-field" value="16" required>
+                    </div>
+                    <div>
+                        <label for="student-gender" class="block text-sm font-medium text-slate-600">Gender</label>
+                        <select id="student-gender" class="mt-1 w-full input-field" required>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Prefer not to say</option>
+                        </select>
+                    </div>
+                     <div>
+                        <label for="student-caste" class="block text-sm font-medium text-slate-600">Caste Category</label>
+                        <select id="student-caste" class="mt-1 w-full input-field" required>
+                            <option>General</option>
+                            <option>OBC</option>
+                            <option>SC</option>
+                            <option>ST</option>
+                        </select>
+                    </div>
+                </div>
+                <button onclick="startAssessment()" class="mt-6 w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700 transition">Start Assessment</button>
+            </section>
+
+            <!-- Questionnaire -->
+            <section id="questionnaire" class="hidden"></section>
+
+            <!-- Submit Button -->
+            <button id="submit-btn" class="hidden mt-6 w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700 transition">Submit Answers</button>
+
+            <!-- Results -->
+            <section id="results" class="hidden mt-8"></section>
+        </main>
+        
+         <div class="text-center mt-6">
+            <a href="student.html" class="text-sm text-blue-600 hover:underline">← Go Back to Dashboard</a>
+        </div>
+    </div>
+    <script src="../assets/test.js"></script>
+</body>
+</html>

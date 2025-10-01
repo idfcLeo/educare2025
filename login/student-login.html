@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="antialiased text-slate-700 bg-slate-100 flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-md">
+        <div class="bg-white shadow-lg rounded-xl p-8">
+            <div class="text-center mb-6">
+                <h1 class="text-3xl font-bold text-slate-800">Student Portal</h1>
+                <p class="text-slate-500 mt-2">Your journey to success starts here. Log in to continue.</p>
+            </div>
+            <form action="../dashboard/student.html">
+                <div class="mb-4">
+                    <label for="student-email" class="block text-sm font-medium text-slate-600 mb-1">Student ID / Email</label>
+                    <input type="text" id="student-email" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="your.name@student.edu" required>
+                </div>
+                <div class="mb-6">
+                    <label for="student-password" class="block text-sm font-medium text-slate-600 mb-1">Password</label>
+                    <input type="password" id="student-password" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="w-full bg-green-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-700 transition duration-300">Login</button>
+            </form>
+             <div class="text-center mt-4">
+                <a href="../index.html" class="text-sm text-green-600 hover:underline">← Back to Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

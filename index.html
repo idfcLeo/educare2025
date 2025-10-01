@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educare - AI-Powered Student Success</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white antialiased">
+
+    <!-- Header -->
+    <header class="absolute top-0 left-0 w-full z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-extrabold text-indigo-600">Educare</a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#features" class="text-slate-600 hover:text-indigo-600 font-medium">Features</a>
+                <a href="#how-it-works" class="text-slate-600 hover:text-indigo-600 font-medium">How It Works</a>
+                <a href="#roles" class="text-slate-600 hover:text-indigo-600 font-medium">Roles</a>
+                <div class="relative">
+                    <button id="login-button" class="bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition duration-300 flex items-center gap-2">
+                        Login
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="login-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl py-2 z-50 border border-slate-100">
+                        <a href="login/student-login.html" class="block px-4 py-2 text-slate-700 hover:bg-indigo-50">As a Student</a>
+                        <a href="login/teacher-login.html" class="block px-4 py-2 text-slate-700 hover:bg-indigo-50">As a Teacher</a>
+                        <a href="login/parent-login.html" class="block px-4 py-2 text-slate-700 hover:bg-indigo-50">As a Parent</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="relative pt-32 pb-24 bg-slate-50 overflow-hidden">
+            <div class="container mx-auto px-6 z-10 relative">
+                <div class="max-w-3xl text-center mx-auto">
+                    <span class="text-indigo-600 font-semibold">PREDICTIVE SUCCESS PLATFORM</span>
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mt-4 leading-tight">Empowering Student Success Through Early Intervention</h1>
+                    <p class="text-lg text-slate-600 mt-6 max-w-2xl mx-auto">Educare uses AI to identify at-risk students sooner, providing educators with the insights needed to intervene effectively and reduce dropout rates.</p>
+                    <div class="mt-8 flex flex-wrap justify-center gap-4">
+                        <a href="login/student-login.html" class="bg-white text-slate-700 font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 border border-slate-200 transition duration-300">Student Login</a>
+                        <a href="login/teacher-login.html" class="bg-indigo-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-indigo-700 transition duration-300">Teacher Login</a>
+                        <a href="login/parent-login.html" class="bg-white text-slate-700 font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 border border-slate-200 transition duration-300">Parent Login</a>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-indigo-100 rounded-full"></div>
+            <div class="absolute -top-24 -right-24 w-72 h-72 bg-pink-100 rounded-full"></div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="bg-slate-50 p-6 rounded-xl text-left transition hover:shadow-lg hover:-translate-y-1">
+                        <div class="bg-pink-100 text-pink-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3M5.636 5.636l1.414-1.414m10.304 10.304l1.414-1.414M12 12a3 3 0 100-6 3 3 0 000 6z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 12a6 6 0 00-6 6h12a6 6 0 00-6-6z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">AI-Powered Predictions</h3>
+                        <p class="text-slate-600 text-sm">Advanced machine learning algorithms identify at-risk students before it's too late.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="bg-slate-50 p-6 rounded-xl text-left transition hover:shadow-lg hover:-translate-y-1">
+                        <div class="bg-blue-100 text-blue-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Early Intervention</h3>
+                        <p class="text-slate-600 text-sm">Get actionable insights and personalized intervention plans tailored to each student.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="bg-slate-50 p-6 rounded-xl text-left transition hover:shadow-lg hover:-translate-y-1">
+                         <div class="bg-green-100 text-green-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Real-Time Analytics</h3>
+                        <p class="text-slate-600 text-sm">Monitor academic health, attendance, and engagement with comprehensive dashboards.</p>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="bg-slate-50 p-6 rounded-xl text-left transition hover:shadow-lg hover:-translate-y-1">
+                        <div class="bg-orange-100 text-orange-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Smart Communication</h3>
+                        <p class="text-slate-600 text-sm">Automated alerts and conversation starters help bridge the gap between home and school.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <span class="text-sm font-semibold bg-white/20 text-white py-1 px-3 rounded-full">PROCESS</span>
+                <h2 class="text-4xl font-bold mt-4">How EDUcare Works</h2>
+                <p class="mt-2 text-indigo-200 max-w-2xl mx-auto">A seamless four-step process to transform student outcomes.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 text-left">
+                    <!-- Step 1 -->
+                    <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-indigo-400/50 p-2 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m3 6V7m-3 10h-2M9 10h2m-2-4h2m5 8h2m-2-4h2m-2-4h2M9 7h2m-2-4h2" /></svg></div>
+                            <span class="text-3xl font-bold text-white/30">01</span>
+                        </div>
+                        <h3 class="text-xl font-bold">Data Collection</h3>
+                        <p class="text-indigo-200 mt-2 text-sm">System analyzes attendance, grades, participation, and engagement patterns.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
+                        <div class="flex items-center justify-between mb-4">
+                             <div class="bg-indigo-400/50 p-2 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg></div>
+                            <span class="text-3xl font-bold text-white/30">02</span>
+                        </div>
+                        <h3 class="text-xl font-bold">AI Analysis</h3>
+                        <p class="text-indigo-200 mt-2 text-sm">Machine learning models predict risk levels and identify intervention opportunities.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
+                        <div class="flex items-center justify-between mb-4">
+                             <div class="bg-indigo-400/50 p-2 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 15l-2 5L9 9l11 4-5 2z" /></svg></div>
+                            <span class="text-3xl font-bold text-white/30">03</span>
+                        </div>
+                        <h3 class="text-xl font-bold">Actionable Insights</h3>
+                        <p class="text-indigo-200 mt-2 text-sm">Personalized recommendations and action plans delivered to the right people.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-indigo-400/50 p-2 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg></div>
+                            <span class="text-3xl font-bold text-white/30">04</span>
+                        </div>
+                        <h3 class="text-xl font-bold">Continuous Support</h3>
+                        <p class="text-indigo-200 mt-2 text-sm">Ongoing monitoring and adjustments ensure sustained student success.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roles Section -->
+        <section id="roles" class="py-20 bg-slate-50">
+            <div class="container mx-auto px-6 text-center">
+                <span class="text-sm font-semibold bg-indigo-100 text-indigo-600 py-1 px-3 rounded-full">FOR EVERYONE</span>
+                <h2 class="text-4xl font-bold text-slate-800 mt-4">Designed for Your Role</h2>
+                <p class="text-slate-600 mt-2 mb-12 max-w-2xl mx-auto">Tailored dashboards and features for students, teachers, and parents to foster a collaborative success environment.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left">
+                    <!-- Students Card -->
+                    <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
+                        <div class="bg-pink-100 text-pink-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222 4 2.222V20M1 12l5.373 2.986L12 17.5l5.627-2.514L23 12" /></svg></div>
+                        <h3 class="text-2xl font-bold mb-4">Students</h3>
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span>What-if goal planner to visualize future outcomes</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span>Gamified achievements and progress tracking</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span>AI-powered personalized learning resources</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span>Wellness check-ins and mental health support</span></li>
+                        </ul>
+                    </div>
+                    <!-- Teachers Card -->
+                    <div class="bg-white p-8 rounded-xl border-2 border-indigo-600 shadow-lg scale-105">
+                        <div class="bg-blue-100 text-blue-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg></div>
+                        <h3 class="text-2xl font-bold mb-4">Teachers</h3>
+                         <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span>AI-generated intervention plans for at-risk students</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span>Cohort analysis to identify class-wide trends</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span>Positive trend alerts to celebrate improvements</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span>Automated communication logging and tracking</span></li>
+                        </ul>
+                    </div>
+                    <!-- Parents Card -->
+                    <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
+                        <div class="bg-green-100 text-green-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg></div>
+                        <h3 class="text-2xl font-bold mb-4">Parents</h3>
+                         <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span>Simplified academic health dashboard</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span>Conversation starter suggestions for tough topics</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span>Celebration alerts for positive achievements</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span>Integrated meeting scheduler with teachers</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-slate-800">Success Stories</h2>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Story 1 -->
+                    <div class="bg-slate-50 p-6 rounded-xl">
+                        <p class="text-slate-600">"Educare's alerts helped me realize my son was struggling in Chemistry before his grades dropped. The conversation starters made it easy to talk to him about it."</p>
+                        <div class="mt-4 flex items-center">
+                            <img src="https://placehold.co/40x40/E0E7FF/4338CA?text=SP" class="w-10 h-10 rounded-full" alt="Sarah P.">
+                            <div class="ml-3">
+                                <p class="font-bold text-slate-800">Sarah P.</p>
+                                <p class="text-sm text-slate-500">Parent</p>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Story 2 -->
+                     <div class="bg-slate-50 p-6 rounded-xl">
+                        <p class="text-slate-600">"The AI-suggested intervention plans are a game-changer. I can quickly create a support strategy for a student in minutes, not hours."</p>
+                        <div class="mt-4 flex items-center">
+                            <img src="https://placehold.co/40x40/FEF3C7/92400E?text=MK" class="w-10 h-10 rounded-full" alt="Mr. Keton">
+                            <div class="ml-3">
+                                <p class="font-bold text-slate-800">Mr. Keton</p>
+                                <p class="text-sm text-slate-500">Teacher</p>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Story 3 -->
+                     <div class="bg-slate-50 p-6 rounded-xl">
+                        <p class="text-slate-600">"I used the 'What-If' planner to see how improving my attendance would boost my final grade. It actually motivated me to go to class more."</p>
+                        <div class="mt-4 flex items-center">
+                            <img src="https://placehold.co/40x40/D1FAE5/065F46?text=MJ" class="w-10 h-10 rounded-full" alt="Maria J.">
+                            <div class="ml-3">
+                                <p class="font-bold text-slate-800">Maria J.</p>
+                                <p class="text-sm text-slate-500">Student</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
+
