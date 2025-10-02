@@ -1,0 +1,118 @@
+/* --- General Body & Font --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* --- Page Transitions --- */
+body.body-fade-in {
+    opacity: 1;
+}
+body.body-fade-out {
+    opacity: 0;
+}
+
+/* --- Reusable Components --- */
+.dashboard-card {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    color: #d1d5db; /* gray-300 */
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+    background-color: #4f46e5; /* indigo-600 */
+    color: white;
+}
+
+.sidebar-link.active {
+    background-color: white;
+    color: #3730a3; /* indigo-800 */
+    font-weight: 600;
+}
+
+/* --- Page-Specific Components --- */
+
+/* Progress Ring (Attendance Page) */
+.progress-ring__circle--progress {
+    transition: stroke-dashoffset 0.5s ease-out;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+/* Academic Health Dial (Dashboard Page) */
+.dial-container {
+    position: relative;
+    width: 150px;
+    height: 75px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.dial-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(#22c55e 0% 33.33%, #f59e0b 33.33% 66.66%, #ef4444 66.66% 100%);
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
+.dial-mask {
+    position: absolute;
+    bottom: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    border-radius: 50%;
+    background-color: white;
+    transform: translateY(50%);
+}
+.dial-center {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid #a3a3a3;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+.dial-needle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    height: 70px;
+    background-color: #374151;
+    transform-origin: bottom center;
+    transition: transform 0.8s ease-out;
+    z-index: 10;
+}
+
+/* Input Fields (Psychometric Test) */
+.input-field {
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    transition: all 0.2s ease;
+}
+.input-field:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}

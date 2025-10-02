@@ -7,91 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        .dashboard-card {
-            background-color: white;
-            border-radius: 1rem;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-        }
-        .sidebar-link {
-            display: flex;
-            align-items: center;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.75rem;
-            color: #d1d5db; /* gray-300 */
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-        .sidebar-link:hover {
-            background-color: #4f46e5; /* indigo-600 */
-            color: white;
-        }
-        .sidebar-link.active {
-            background-color: white;
-            color: #3730a3; /* indigo-800 */
-            font-weight: 600;
-        }
-        .input-field {
-            border: 1px solid #d1d5db;
-            border-radius: 0.5rem;
-            padding: 0.75rem;
-            transition: all 0.2s ease;
-        }
-        .input-field:focus {
-            outline: none;
-            border-color: #4f46e5;
-            box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body class="bg-gray-100 text-gray-800">
 
     <div class="flex min-h-screen">
         <!-- Sidebar Navigation -->
-        <aside class="w-72 bg-[#3730a3] p-6 flex flex-col text-white">
-            <div class="text-center mb-12">
-                 <a href="../index.html" class="text-4xl font-bold tracking-wider">EduCare</a>
-            </div>
-            <nav id="sidebar-nav" class="flex flex-col space-y-3">
-                 <a href="student.html" class="sidebar-link active">
-                    <i class="fas fa-tachometer-alt w-6 text-center"></i>
-                    <span class="ml-4">Dashboard</span>
-                </a>
-                <a href="classes.html" class="sidebar-link">
-                    <i class="fas fa-chalkboard-teacher w-6 text-center"></i>
-                    <span class="ml-4">Classes</span>
-                </a>
-                 <a href="attendance.html" class="sidebar-link">
-                    <i class="fas fa-calendar-check w-6 text-center"></i>
-                    <span class="ml-4">Attendance</span>
-                </a>
-                <a href="resources.html" class="sidebar-link">
-                    <i class="fas fa-book-open w-6 text-center"></i>
-                    <span class="ml-4">Resources</span>
-                </a>
-                <a href="learning-plan.html" class="sidebar-link">
-                    <i class="fas fa-clipboard-list w-6 text-center"></i>
-                    <span class="ml-4">Learning Plan</span>
-                </a>
-                 <a href="#" class="sidebar-link">
-                    <i class="fas fa-bullhorn w-6 text-center"></i>
-                    <span class="ml-4">Events</span>
-                </a>
-                 <a href="#" class="sidebar-link">
-                    <i class="fas fa-file-alt w-6 text-center"></i>
-                    <span class="ml-4">Exams</span>
-                </a>
-            </nav>
-             <div class="mt-auto text-center">
-                 <button onclick="logout()" class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg transition">
-                    Logout
-                 </button>
-            </div>
-        </aside>
+        <div id="sidebar-placeholder"></div>
 
         <!-- Main Content -->
         <main class="flex-1 p-8">

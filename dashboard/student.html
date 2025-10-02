@@ -8,140 +8,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        .dashboard-card {
-            background-color: white;
-            border-radius: 1rem;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            transition: all 0.3s ease;
-        }
-        .sidebar-link {
-            display: flex;
-            align-items: center;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.75rem;
-            color: #d1d5db; /* gray-300 */
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-        .sidebar-link:hover {
-            background-color: #4f46e5; /* indigo-600 */
-            color: white;
-        }
-        .sidebar-link.active {
-            background-color: white;
-            color: #3730a3; /* indigo-800 */
-            font-weight: 600;
-        }
-        /* Academic Health Dial */
-        .dial-container {
-            position: relative;
-            width: 150px;
-            height: 75px; /* Half of width for semicircle */
-            overflow: hidden;
-            margin: 0 auto;
-        }
-        .dial-background {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 150px;
-            height: 150px; /* Full circle */
-            border-radius: 50%;
-            background: conic-gradient(
-                #22c55e 0% 33.33%, /* Green */
-                #f59e0b 33.33% 66.66%, /* Yellow */
-                #ef4444 66.66% 100% /* Red */
-            );
-            transform: rotate(-90deg); /* Start from left */
-            transform-origin: center;
-        }
-        .dial-mask {
-            position: absolute;
-            bottom: -50%; /* hide bottom half */
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            border-radius: 50%;
-            background-color: white; /* same as card background */
-            transform: translateY(50%);
-        }
-        .dial-center {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 30px;
-            height: 30px;
-            background-color: white;
-            border-radius: 50%;
-            border: 2px solid #a3a3a3;
-            transform: translateX(-50%);
-            z-index: 20;
-        }
-        .dial-needle {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 2px;
-            height: 70px;
-            background-color: #374151; /* Gray-700 */
-            transform-origin: bottom center;
-            transition: transform 0.8s ease-out;
-            z-index: 10;
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body class="bg-gray-100 text-gray-800">
 
     <div class="flex min-h-screen">
-        <aside class="w-72 bg-[#3730a3] p-6 flex flex-col text-white">
-            <div class="text-center mb-12">
-                 <a href="../index.html" class="text-4xl font-bold tracking-wider">EduCare</a>
-            </div>
-            <nav id="sidebar-nav" class="flex flex-col space-y-3">
-                 <a href="student.html" class="sidebar-link active">
-                    <i class="fas fa-tachometer-alt w-6 text-center"></i>
-                    <span class="ml-4">Dashboard</span>
-                </a>
-                <a href="classes.html" class="sidebar-link">
-                    <i class="fas fa-chalkboard-teacher w-6 text-center"></i>
-                    <span class="ml-4">Classes</span>
-                </a>
-                 <a href="attendance.html" class="sidebar-link">
-                    <i class="fas fa-calendar-check w-6 text-center"></i>
-                    <span class="ml-4">Attendance</span>
-                </a>
-                <a href="resources.html" class="sidebar-link">
-                    <i class="fas fa-book-open w-6 text-center"></i>
-                    <span class="ml-4">Resources</span>
-                </a>
-                <a href="learning-plan.html" class="sidebar-link">
-                    <i class="fas fa-clipboard-list w-6 text-center"></i>
-                    <span class="ml-4">Learning Plan</span>
-                </a>
-                <a href="#" class="sidebar-link">
-                    <i class="fas fa-bullhorn w-6 text-center"></i>
-                    <span class="ml-4">Events</span>
-                </a>
-                 <a href="#" class="sidebar-link">
-                    <i class="fas fa-file-alt w-6 text-center"></i>
-                    <span class="ml-4">Exams</span>
-                </a>
-            </nav>
-            <div class="mt-auto text-center">
-                 <button onclick="logout()" class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg transition">
-                    <a href="../index.html">Logout</a>
-                 </button>
-            </div>
-        </aside>
+        <!-- Sidebar Placeholder -->
+        <div id="sidebar-placeholder"></div>
 
         <main class="flex-1 p-8">
             <header class="flex justify-between items-center mb-8">
-                <h1 class="text-2xl font-bold text-gray-700">Welcome Student</h1>
+                <h1 class="text-2xl font-bold text-gray-700">Student Dashboard</h1>
                 <div class="font-semibold text-gray-600">School Year 2024 - 2025</div>
             </header>
 
@@ -177,9 +54,7 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                
                 <div class="lg:col-span-2 space-y-8">
-                    
                     <div class="dashboard-card p-8 bg-purple-100/50 flex items-center justify-between rounded-xl">
                         <div>
                             <h1 class="text-3xl font-bold text-gray-800">Welcome back, Alex!</h1>
@@ -187,7 +62,6 @@
                         </div>
                         <img src="https://placehold.co/150x100/DEDAF7/6D28D9?text=Illustration&font=poppins" alt="Welcome Illustration" class="hidden sm:block">
                     </div>
-
                     
                     <div class="dashboard-card p-6">
                         <h2 class="text-xl font-bold mb-4">Grade Trends</h2>
@@ -196,7 +70,6 @@
                         </div>
                     </div>
 
-                    
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="dashboard-card p-6 text-center">
                             <h2 class="text-xl font-bold mb-4">My Academic Health</h2>
@@ -216,16 +89,13 @@
                     </div>
                 </div>
 
-                
                 <div class="space-y-8">
-                    
                     <div class="dashboard-card p-6 text-center flex flex-col items-center">
                         <img src="https://i.pravatar.cc/80?img=6" alt="Alex Johnson" class="w-20 h-20 rounded-full mb-3 border-2 border-indigo-200">
                         <h2 class="text-xl font-bold">Alex Johnson</h2>
                         <p class="text-gray-500">Student</p>
                          <button onclick="logout()" class="mt-4 w-full text-indigo-600 font-semibold py-2 rounded-lg hover:bg-indigo-50 transition">Logout</button>
                     </div>
-                    
                     
                     <div class="dashboard-card p-6">
                         <h2 class="text-xl font-bold mb-4">My Weekly Goals</h2>
@@ -236,7 +106,6 @@
                         </div>
                     </div>
 
-                    
                     <div class="dashboard-card p-6">
                         <h2 class="text-xl font-bold mb-4">My Achievements</h2>
                         <div id="achievements-list" class="flex justify-around items-center">
@@ -258,39 +127,46 @@
             </div>
         </main>
     </div>
-
-    <!-- Shared scripts -->
+    
+    <!-- Shared and Sidebar Scripts -->
+    <script src="../assets/js/include.js"></script>
     <script src="../assets/js/student.js"></script>
 
     <!-- Page-specific scripts -->
     <script>
-        // --- Grade Trends Chart ---
-        const gradesCtx = document.getElementById('gradesChart').getContext('2d');
-        const gradesChart = new Chart(gradesCtx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
-                datasets: [{
-                    label: 'Math Grades',
-                    data: [85, 88, 90, 82, 95, 92, 98, 90],
-                    borderColor: '#4f46e5',
-                    backgroundColor: 'rgba(79, 70, 229, 0.1)',
-                    fill: true,
-                    tension: 0.4,
-                }, {
-                    label: 'Science Grades',
-                    data: [78, 85, 80, 87, 83, 90, 88, 94],
-                    borderColor: '#22c55e',
-                    backgroundColor: 'rgba(34, 197, 94, 0.1)',
-                    fill: true,
-                    tension: 0.4,
-                }]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                plugins: { legend: { position: 'top' }},
-                scales: { y: { beginAtZero: false }}
-            }
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Grade Trends Chart ---
+            const gradesCtx = document.getElementById('gradesChart').getContext('2d');
+            const gradesChart = new Chart(gradesCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+                    datasets: [{
+                        label: 'Math Grades',
+                        data: [85, 88, 90, 82, 95, 92, 98, 90],
+                        borderColor: '#4f46e5',
+                        backgroundColor: 'rgba(79, 70, 229, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                    }, {
+                        label: 'Science Grades',
+                        data: [78, 85, 80, 87, 83, 90, 88, 94],
+                        borderColor: '#22c55e',
+                        backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { position: 'top' }},
+                    scales: { y: { beginAtZero: false }}
+                }
+            });
+
+            // Initial render for goals and health
+            renderGoals();
+            updateAcademicHealth(70); // Example initial value
         });
 
         // --- Academic Health Dial Logic ---
@@ -341,14 +217,7 @@
             goals[index].completed = !goals[index].completed;
             renderGoals();
         }
-
-        // Initial render on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            renderGoals();
-            updateAcademicHealth(70); // Example initial value
-        });
     </script>
-    
 </body>
 </html>
 
