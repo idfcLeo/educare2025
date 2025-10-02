@@ -6,11 +6,36 @@
     <title>Educare - AI-Powered Student Success</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="stylesheet" href="assets/style.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
+        }
+        #bg-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        /* Styles for scroll animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -43,29 +68,28 @@
 
     <!-- Hero Section -->
     <main>
-        <section class="relative pt-32 pb-24 bg-slate-50 overflow-hidden">
+        <section class="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
+            <canvas id="bg-canvas"></canvas>
             <div class="container mx-auto px-6 z-10 relative">
                 <div class="max-w-3xl text-center mx-auto">
-                    <span class="text-indigo-600 font-semibold">PREDICTIVE SUCCESS PLATFORM</span>
-                    <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mt-4 leading-tight">Empowering Student Success Through Early Intervention</h1>
-                    <p class="text-lg text-slate-600 mt-6 max-w-2xl mx-auto">Educare uses AI to identify at-risk students sooner, providing educators with the insights needed to intervene effectively and reduce dropout rates.</p>
+                    <span class="text-indigo-400 font-semibold">PREDICTIVE SUCCESS PLATFORM</span>
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-white mt-4 leading-tight">Empowering Student Success Through Early Intervention</h1>
+                    <p class="text-lg text-slate-300 mt-6 max-w-2xl mx-auto">Educare uses AI to identify at-risk students sooner, providing educators with the insights needed to intervene effectively and reduce dropout rates.</p>
                     <div class="mt-8 flex flex-wrap justify-center gap-4">
-                        <a href="login/student-login.html" class="bg-white text-slate-700 font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 border border-slate-200 transition duration-300">Student Login</a>
                         <a href="login/teacher-login.html" class="bg-indigo-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-indigo-700 transition duration-300">Teacher Login</a>
+                        <a href="login/student-login.html" class="bg-white text-slate-700 font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 border border-slate-200 transition duration-300">Student Login</a>
                         <a href="login/parent-login.html" class="bg-white text-slate-700 font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 border border-slate-200 transition duration-300">Parent Login</a>
                     </div>
                 </div>
             </div>
-            <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-indigo-100 rounded-full"></div>
-            <div class="absolute -top-24 -right-24 w-72 h-72 bg-pink-100 rounded-full"></div>
         </section>
 
         <!-- Features Section -->
-        <section id="features" class="py-20 bg-white">
+        <section id="features" class="py-20 bg-white scroll-animate">
             <div class="container mx-auto px-6 text-center">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Feature 1 -->
-                    <div class="bg-slate-50 p-6 rounded-xl text-left transition hover:shadow-lg hover:-translate-y-1">
+                    <div class="feature-card bg-slate-50 p-6 rounded-xl text-left">
                         <div class="bg-pink-100 text-pink-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3M5.636 5.636l1.414-1.414m10.304 10.304l1.414-1.414M12 12a3 3 0 100-6 3 3 0 000 6z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 12a6 6 0 00-6 6h12a6 6 0 00-6-6z" /></svg>
                         </div>
@@ -73,7 +97,7 @@
                         <p class="text-slate-600 text-sm">Advanced machine learning algorithms identify at-risk students before it's too late.</p>
                     </div>
                     <!-- Feature 2 -->
-                    <div class="bg-slate-50 p-6 rounded-xl text-left transition hover:shadow-lg hover:-translate-y-1">
+                    <div class="feature-card bg-slate-50 p-6 rounded-xl text-left">
                         <div class="bg-blue-100 text-blue-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
                         </div>
@@ -81,7 +105,7 @@
                         <p class="text-slate-600 text-sm">Get actionable insights and personalized intervention plans tailored to each student.</p>
                     </div>
                     <!-- Feature 3 -->
-                    <div class="bg-slate-50 p-6 rounded-xl text-left transition hover:shadow-lg hover:-translate-y-1">
+                    <div class="feature-card bg-slate-50 p-6 rounded-xl text-left">
                          <div class="bg-green-100 text-green-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
                         </div>
@@ -89,7 +113,7 @@
                         <p class="text-slate-600 text-sm">Monitor academic health, attendance, and engagement with comprehensive dashboards.</p>
                     </div>
                     <!-- Feature 4 -->
-                    <div class="bg-slate-50 p-6 rounded-xl text-left transition hover:shadow-lg hover:-translate-y-1">
+                    <div class="feature-card bg-slate-50 p-6 rounded-xl text-left">
                         <div class="bg-orange-100 text-orange-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
                         </div>
@@ -101,14 +125,17 @@
         </section>
 
         <!-- How It Works Section -->
-        <section id="how-it-works" class="py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-            <div class="container mx-auto px-6 text-center">
-                <span class="text-sm font-semibold bg-white/20 text-white py-1 px-3 rounded-full">PROCESS</span>
-                <h2 class="text-4xl font-bold mt-4">How EDUcare Works</h2>
-                <p class="mt-2 text-indigo-200 max-w-2xl mx-auto">A seamless four-step process to transform student outcomes.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 text-left">
+        <section id="how-it-works" class="relative py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white scroll-animate">
+            <div id="process-container" class="container mx-auto px-6 text-center relative">
+                <canvas id="process-canvas" class="absolute top-0 left-0 w-full h-full"></canvas>
+                <div class="relative z-10">
+                    <span class="text-sm font-semibold bg-white/20 text-white py-1 px-3 rounded-full">PROCESS</span>
+                    <h2 class="text-4xl font-bold mt-4">How EDUcare Works</h2>
+                    <p class="mt-2 text-indigo-200 max-w-2xl mx-auto">A seamless four-step process to transform student outcomes.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 text-left relative z-10">
                     <!-- Step 1 -->
-                    <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
+                    <div class="process-step bg-white/10 p-6 rounded-xl backdrop-blur-sm">
                         <div class="flex items-center justify-between mb-4">
                             <div class="bg-indigo-400/50 p-2 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m3 6V7m-3 10h-2M9 10h2m-2-4h2m5 8h2m-2-4h2m-2-4h2M9 7h2m-2-4h2" /></svg></div>
                             <span class="text-3xl font-bold text-white/30">01</span>
@@ -117,7 +144,7 @@
                         <p class="text-indigo-200 mt-2 text-sm">System analyzes attendance, grades, participation, and engagement patterns.</p>
                     </div>
                     <!-- Step 2 -->
-                    <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
+                    <div class="process-step bg-white/10 p-6 rounded-xl backdrop-blur-sm">
                         <div class="flex items-center justify-between mb-4">
                              <div class="bg-indigo-400/50 p-2 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg></div>
                             <span class="text-3xl font-bold text-white/30">02</span>
@@ -126,7 +153,7 @@
                         <p class="text-indigo-200 mt-2 text-sm">Machine learning models predict risk levels and identify intervention opportunities.</p>
                     </div>
                     <!-- Step 3 -->
-                    <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
+                    <div class="process-step bg-white/10 p-6 rounded-xl backdrop-blur-sm">
                         <div class="flex items-center justify-between mb-4">
                              <div class="bg-indigo-400/50 p-2 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 15l-2 5L9 9l11 4-5 2z" /></svg></div>
                             <span class="text-3xl font-bold text-white/30">03</span>
@@ -135,7 +162,7 @@
                         <p class="text-indigo-200 mt-2 text-sm">Personalized recommendations and action plans delivered to the right people.</p>
                     </div>
                     <!-- Step 4 -->
-                    <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
+                    <div class="process-step bg-white/10 p-6 rounded-xl backdrop-blur-sm">
                         <div class="flex items-center justify-between mb-4">
                             <div class="bg-indigo-400/50 p-2 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg></div>
                             <span class="text-3xl font-bold text-white/30">04</span>
@@ -148,7 +175,7 @@
         </section>
 
         <!-- Roles Section -->
-        <section id="roles" class="py-20 bg-slate-50">
+        <section id="roles" class="py-20 bg-slate-50 scroll-animate">
             <div class="container mx-auto px-6 text-center">
                 <span class="text-sm font-semibold bg-indigo-100 text-indigo-600 py-1 px-3 rounded-full">FOR EVERYONE</span>
                 <h2 class="text-4xl font-bold text-slate-800 mt-4">Designed for Your Role</h2>
@@ -192,7 +219,7 @@
         </section>
 
         <!-- Success Stories Section -->
-        <section class="py-20 bg-white">
+        <section class="py-20 bg-white scroll-animate">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center text-slate-800">Success Stories</h2>
                 <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -234,6 +261,235 @@
         </section>
     </main>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Dropdown handler
+            const loginButton = document.getElementById('login-button');
+            const loginDropdown = document.getElementById('login-dropdown');
+
+            if (loginButton && loginDropdown) {
+                loginButton.addEventListener('click', () => {
+                    loginDropdown.classList.toggle('hidden');
+                });
+
+                document.addEventListener('click', function(event) {
+                    if (!loginButton.contains(event.target) && !loginDropdown.contains(event.target)) {
+                        loginDropdown.classList.add('hidden');
+                    }
+                });
+            }
+
+            // --- Smooth Scrolling for Nav Links ---
+            document.querySelectorAll('header nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // --- Scroll-triggered Animations ---
+            const scrollElements = document.querySelectorAll('.scroll-animate');
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        scrollObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            scrollElements.forEach(el => {
+                scrollObserver.observe(el);
+            });
+
+            // --- Hero Section 3D Animation ---
+            const heroCanvas = document.getElementById('bg-canvas');
+            if (heroCanvas) {
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
+                const renderer = new THREE.WebGLRenderer({ canvas: heroCanvas, alpha: true });
+                renderer.setClearColor(0x0f172a, 1);
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+                const starVertices = [];
+                for (let i = 0; i < 15000; i++) {
+                    const x = (Math.random() - 0.5) * 2000;
+                    const y = (Math.random() - 0.5) * 2000;
+                    const z = (Math.random() - 0.5) * 2000;
+                    starVertices.push(x, y, z);
+                }
+                const starGeometry = new THREE.BufferGeometry();
+                starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+                const starMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 1.5, sizeAttenuation: true });
+                const stars = new THREE.Points(starGeometry, starMaterial);
+                scene.add(stars);
+
+                const objects = [];
+                const planetGeometries = [ new THREE.SphereGeometry(1, 32, 32), new THREE.IcosahedronGeometry(0.8, 0), new THREE.DodecahedronGeometry(0.7, 0) ];
+                const planetMaterials = [ new THREE.MeshStandardMaterial({ color: 0x4f46e5, roughness: 0.8, metalness: 0.1 }), new THREE.MeshStandardMaterial({ color: 0x8b5cf6, roughness: 0.7, metalness: 0.1 }), new THREE.MeshStandardMaterial({ color: 0x3b82f6, roughness: 1, metalness: 0.2 }), new THREE.MeshStandardMaterial({ color: 0x7e22ce, roughness: 0.5, metalness: 0.1 }), ];
+                for (let i = 0; i < 25; i++) {
+                    const geometry = planetGeometries[Math.floor(Math.random() * planetGeometries.length)];
+                    const material = planetMaterials[Math.floor(Math.random() * planetMaterials.length)];
+                    const mesh = new THREE.Mesh(geometry, material);
+                    mesh.position.x = (Math.random() - 0.5) * 40;
+                    mesh.position.y = (Math.random() - 0.5) * 40;
+                    mesh.position.z = (Math.random() - 0.5) * 40 - 20;
+                    mesh.rotation.x = Math.random() * 2 * Math.PI;
+                    mesh.rotation.y = Math.random() * 2 * Math.PI;
+                    const scale = 0.5 + Math.random() * 1.5;
+                    mesh.scale.set(scale, scale, scale);
+                    objects.push({mesh: mesh, speed: Math.random() * 0.002 + 0.001});
+                    scene.add(mesh);
+                }
+
+                const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
+                scene.add(ambientLight);
+                const pointLight = new THREE.PointLight(0xffffff, 1.5, 100);
+                pointLight.position.set(10, 10, 10);
+                scene.add(pointLight);
+                camera.position.z = 15;
+                
+                let mouseX = 0;
+                let mouseY = 0;
+                document.addEventListener('mousemove', (event) => { mouseX = (event.clientX / window.innerWidth) * 2 - 1; mouseY = -(event.clientY / window.innerHeight) * 2 + 1; }, false);
+                
+                const clock = new THREE.Clock();
+                function animateHero() {
+                    requestAnimationFrame(animateHero);
+                    camera.position.x += (mouseX * 5 - camera.position.x) * 0.05;
+                    camera.position.y += (-mouseY * 5 - camera.position.y) * 0.05;
+                    camera.lookAt(scene.position);
+                    stars.rotation.y += 0.0001;
+                    objects.forEach(obj => { obj.mesh.rotation.x += obj.speed; obj.mesh.rotation.y += obj.speed; });
+                    renderer.render(scene, camera);
+                }
+                animateHero();
+                
+                window.addEventListener('resize', () => {
+                    camera.aspect = window.innerWidth / window.innerHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(window.innerWidth, window.innerHeight);
+                    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                });
+            }
+
+            // --- "How It Works" Section Animation ---
+            function initProcessAnimation() {
+                const section = document.getElementById('how-it-works');
+                const container = document.getElementById('process-container');
+                const canvas = document.getElementById('process-canvas');
+                if (!section || !canvas || !container) return;
+
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+                const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
+                renderer.setSize(container.clientWidth, container.clientHeight);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+                camera.position.z = 10;
+
+                let tubeMesh, comet, curve;
+                let animationProgress = 0;
+                let isAnimating = false;
+
+                function setupCurve() {
+                    if (tubeMesh) scene.remove(tubeMesh);
+                    if (comet) scene.remove(comet);
+
+                    const stepElements = document.querySelectorAll('.process-step');
+                    const points = [];
+                    
+                    const viewSize = getViewSizeAtZ(camera, 0);
+                    const containerRect = container.getBoundingClientRect();
+
+                    stepElements.forEach((el, index) => {
+                        const rect = el.getBoundingClientRect();
+                        const x = ((rect.left + rect.width / 2) - containerRect.left) / containerRect.width * viewSize.width - viewSize.width/2;
+                        let y = -(((rect.top + rect.height / 2) - containerRect.top) / containerRect.height * viewSize.height - viewSize.height/2);
+                        
+                        const yOffset = viewSize.height * 0.15;
+                        if (index === 1) {
+                            y += yOffset;
+                        }
+                        if (index === 2) {
+                            y -= yOffset;
+                        }
+                        
+                        points.push(new THREE.Vector3(x, y, 0));
+                    });
+                    
+                    if (points.length < 2) return;
+                    
+                    curve = new THREE.CatmullRomCurve3(points);
+                    const tubeGeometry = new THREE.TubeGeometry(curve, 100, 0.03, 8, false);
+                    const tubeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.3 });
+                    tubeMesh = new THREE.Mesh(tubeGeometry, tubeMaterial);
+                    tubeMesh.geometry.setDrawRange(0, 0);
+                    scene.add(tubeMesh);
+
+                    const cometGeometry = new THREE.SphereGeometry(0.1, 16, 16);
+                    const cometMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+                    comet = new THREE.Mesh(cometGeometry, cometMaterial);
+                    comet.visible = false;
+                    scene.add(comet);
+                }
+
+                function getViewSizeAtZ(camera, z) {
+                    const distance = camera.position.z - z;
+                    const vFov = (camera.fov * Math.PI) / 180;
+                    const height = 2 * Math.tan(vFov / 2) * Math.abs(distance);
+                    const width = height * camera.aspect;
+                    return { width, height };
+                }
+
+                const processObserver = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        isAnimating = true;
+                    }
+                }, { threshold: 0.6 });
+                processObserver.observe(section);
+
+                const clock = new THREE.Clock();
+                function animateProcess() {
+                    requestAnimationFrame(animateProcess);
+
+                    if (isAnimating && tubeMesh) {
+                        if(animationProgress < 1) {
+                            animationProgress += 0.008;
+                            const drawCount = Math.floor(animationProgress * tubeMesh.geometry.attributes.position.array.length / 3);
+                            tubeMesh.geometry.setDrawRange(0, drawCount);
+                        } else {
+                            comet.visible = true;
+                            const cometProgress = (clock.getElapsedTime() * 0.15) % 1;
+                            const point = curve.getPointAt(cometProgress);
+                            comet.position.copy(point);
+                        }
+                    }
+                    
+                    renderer.render(scene, camera);
+                }
+
+                window.addEventListener('resize', () => {
+                    camera.aspect = container.clientWidth / container.clientHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(container.clientWidth, container.clientHeight);
+                    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                    setupCurve();
+                });
+                
+                setupCurve();
+                animateProcess();
+            }
+            initProcessAnimation();
+
+        });
+    </script>
 </body>
 </html>
 

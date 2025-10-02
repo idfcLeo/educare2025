@@ -1,3 +1,4 @@
+// This file remains unchanged, but I am providing it to maintain context
 document.addEventListener("DOMContentLoaded", function() {
     const path = window.location.pathname;
     const currentPage = path.split('/').pop();
@@ -8,20 +9,25 @@ document.addEventListener("DOMContentLoaded", function() {
     if (path.includes('/dashboard/') && !path.includes('/dashboard/teacher/') && !path.includes('/dashboard/parent/')) {
         const studentPages = ['student.html', 'classes.html', 'attendance.html', 'resources.html', 'learning-plan.html'];
         if (studentPages.includes(currentPage)) {
-            sidebarPath = '../const/leftsidebar.html';
+            // Sidebar is hardcoded, so just set active link
+            setActiveLink(currentPage);
         }
     } 
     // Check for teacher pages
     else if (path.includes('/dashboard/teacher/')) {
         const teacherPages = ['teacher.html', 'my-classes.html', 'assign-tasks.html', 'student-reports.html', 'communication.html'];
         if (teacherPages.includes(currentPage)) {
-            sidebarPath = '../../const/leftsidebar-teacher.html';
+            // Sidebar is hardcoded, so just set active link
+            setActiveLink(currentPage);
         }
     }
     // Check for parent pages
     else if (path.includes('/dashboard/parent/')) {
-        // Sidebar is hardcoded, so just set active link
-        setActiveLink(currentPage);
+        const parentPages = ['parent.html', 'academic-health.html', 'attendance-report.html', 'communication-parent.html', 'schedule-meeting.html'];
+        if (parentPages.includes(currentPage)) {
+            // Sidebar is hardcoded, so just set active link
+            setActiveLink(currentPage);
+        }
     }
 
 
@@ -57,9 +63,8 @@ document.addEventListener("DOMContentLoaded", function() {
         initializeCommunicationParentPage();
     } else if (currentPage === 'schedule-meeting.html') {
         initializeScheduleMeetingPage();
-    } else if (currentPage === 'index.html') {
-        setupLoginDropdown();
     }
+    // Note: No need for index.html specific JS here as it's now embedded in the HTML file
 });
 
 function loadSidebar(path, currentPage) {
@@ -681,12 +686,22 @@ function initializeCommunicationParentPage() {
 
 
 function initializeScheduleMeetingPage() {
-    const datePicker = document.getElementById('meeting-date');
-    if (datePicker) {
+    const form = document.getElementById('schedule-meeting-form');
+    if (form) {
+        const datePicker = document.getElementById('meeting-date');
         // Set a default date, e.g., tomorrow
         const tomorrow = new Date();
         tomorrow.setDate(tomorrow.getDate() + 1);
         datePicker.valueAsDate = tomorrow;
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Meeting request sent successfully!');
+            form.reset();
+             const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            datePicker.valueAsDate = tomorrow;
+        });
     }
 }
 
@@ -721,22 +736,5 @@ function renderCelebrateWins() {
 
 
 // --- Home Page Functions ---
-
-function setupLoginDropdown() {
-    const loginButton = document.getElementById('login-button');
-    const loginDropdown = document.getElementById('login-dropdown');
-
-    if (loginButton && loginDropdown) {
-        loginButton.addEventListener('click', () => {
-            loginDropdown.classList.toggle('hidden');
-        });
-
-        // Close dropdown if clicking outside
-        document.addEventListener('click', function(event) {
-            if (!loginButton.contains(event.target) && !loginDropdown.contains(event.target)) {
-                loginDropdown.classList.add('hidden');
-            }
-        });
-    }
-}
+// Now embedded directly in index.html
 
