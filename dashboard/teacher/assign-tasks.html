@@ -5,46 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assign Tasks - Educare</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/teachercss/teacher_style.css">
 </head>
-<body class="antialiased text-slate-800 bg-slate-50">
+<body class="bg-gray-100 text-gray-800">
 
     <div class="flex min-h-screen">
         <!-- Sidebar placeholder -->
-        <aside id="sidebar-container" class="w-64 bg-white p-6 flex flex-col border-r border-slate-200"></aside>
+        <div id="sidebar-placeholder"></div>
 
         <!-- Main Content -->
-        <main class="flex-1 p-6 lg:p-10">
-            <h1 class="text-3xl font-bold text-slate-800 mb-8">Assign Tasks</h1>
+        <main class="flex-1 p-8">
+            <h1 class="text-2xl font-bold text-gray-700 mb-8">Assign Tasks</h1>
             
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Left Column: Create Task Form -->
                 <div class="lg:col-span-1">
-                    <div class="dashboard-card-new p-6">
+                    <div class="dashboard-card p-6">
                         <h2 class="text-xl font-bold mb-4">Create New Task</h2>
                         <form id="create-task-form" class="space-y-4">
                             <div>
-                                <label for="task-title" class="block text-sm font-medium text-slate-700">Task Title</label>
-                                <input type="text" id="task-title" class="mt-1 w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                                <label for="task-title" class="block text-sm font-medium text-gray-700">Task Title</label>
+                                <input type="text" id="task-title" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
                             </div>
-                             <div>
-                                <label for="task-class" class="block text-sm font-medium text-slate-700">Assign to Class</label>
-                                <select id="task-class" class="mt-1 w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <div>
+                                <label for="task-class" class="block text-sm font-medium text-gray-700">Assign to Class</label>
+                                <select id="task-class" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
                                     <option>Class 10B - Mathematics</option>
                                     <option>Class 9A - History</option>
                                 </select>
                             </div>
                             <div>
-                                <label for="task-due-date" class="block text-sm font-medium text-slate-700">Due Date</label>
-                                <input type="date" id="task-due-date" class="mt-1 w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                                <label for="task-due-date" class="block text-sm font-medium text-gray-700">Due Date</label>
+                                <input type="date" id="task-due-date" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
                             </div>
                             <div>
-                                <label for="task-description" class="block text-sm font-medium text-slate-700">Description</label>
-                                <textarea id="task-description" rows="4" class="mt-1 w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                                <label for="task-description" class="block text-sm font-medium text-gray-700">Description</label>
+                                <textarea id="task-description" rows="4" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
                             </div>
                             <div>
-                                <button type="submit" class="w-full bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700">Assign Task</button>
+                                <button type="submit" class="w-full bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition">Assign Task</button>
                             </div>
                         </form>
                     </div>
@@ -52,17 +53,20 @@
 
                 <!-- Right Column: Assigned Tasks List -->
                 <div class="lg:col-span-2">
-                    <div class="dashboard-card-new p-6">
+                    <div class="dashboard-card p-6">
                         <h2 class="text-xl font-bold mb-4">Previously Assigned Tasks</h2>
                         <div id="assigned-tasks-list" class="space-y-4">
-                            <!-- Task items will be inserted here by script.js -->
+                            <!-- Task items will be inserted here -->
                         </div>
                     </div>
                 </div>
             </div>
         </main>
     </div>
-    <script src="../../assets/script.js"></script>
+
+    <!-- Scripts -->
+    <script src="../../assets/teacherjs/teacher_include.js"></script>
+    <script src="../../assets/teacherjs/teacher.js"></script>
 </body>
 </html>
 

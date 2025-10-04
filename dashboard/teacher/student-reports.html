@@ -5,62 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Reports - Educare</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/teachercss/teacher_style.css">
 </head>
-<body class="antialiased text-slate-800 bg-slate-50">
+<body class="bg-gray-100 text-gray-800">
 
     <div class="flex min-h-screen">
         <!-- Sidebar placeholder -->
-        <aside id="sidebar-container" class="w-64 bg-white p-6 flex flex-col border-r border-slate-200"></aside>
+        <div id="sidebar-placeholder"></div>
 
         <!-- Main Content -->
-        <main class="flex-1 p-6 lg:p-10">
-            <h1 class="text-3xl font-bold text-slate-800 mb-8">Student Psychometric Reports</h1>
-            <div class="dashboard-card-new p-6">
+        <main class="flex-1 p-8">
+            <h1 class="text-2xl font-bold text-gray-700 mb-8">Student Psychometric Reports</h1>
+            <div class="dashboard-card p-6">
                 <div class="space-y-4" id="student-reports-list">
-                    <!-- Student report summaries will be inserted here by script.js -->
+                    <!-- Student report summaries will be dynamically inserted here -->
                 </div>
             </div>
         </main>
     </div>
 
     <!-- Report Details Modal -->
-    <div id="report-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div id="report-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
         <div class="bg-white rounded-lg p-8 max-w-2xl w-full">
             <div class="flex justify-between items-start">
                 <div>
-                    <h2 class="text-2xl font-bold" id="report-modal-student-name"></h2>
-                    <p class="text-slate-500 text-sm">Psychometric Assessment Results</p>
+                    <h2 class="text-2xl font-bold text-gray-800" id="report-modal-student-name"></h2>
+                    <p class="text-gray-500 text-sm">Psychometric Assessment Results</p>
                 </div>
-                <button onclick="closeReportModal()" class="text-slate-400 hover:text-slate-600">&times;</button>
+                <button onclick="closeReportModal()" class="text-2xl font-light text-gray-400 hover:text-gray-600">&times;</button>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center my-6">
-                <div class="bg-slate-100 p-4 rounded-lg">
-                    <p class="text-sm text-slate-500">Overall Risk</p>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p class="text-sm text-gray-500">Overall Risk</p>
                     <p class="text-2xl font-bold" id="report-modal-risk-level"></p>
                 </div>
-                <div class="bg-slate-100 p-4 rounded-lg">
-                    <p class="text-sm text-slate-500">Risk Percentage</p>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p class="text-sm text-gray-500">Risk Percentage</p>
                     <p class="text-2xl font-bold" id="report-modal-risk-percentage"></p>
                 </div>
             </div>
 
-            <div class="mt-6">
+            <div class="mt-6 relative h-72">
                 <canvas id="report-chart"></canvas>
             </div>
 
-            <div class="flex justify-end gap-4 pt-6 mt-4 border-t border-slate-200">
-                <button onclick="closeReportModal()" class="bg-slate-100 text-slate-700 font-semibold py-2 px-4 rounded-lg hover:bg-slate-200">Close</button>
-                <button onclick="contactParent()" class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700">Contact Parent</button>
+            <div class="flex justify-end gap-4 pt-6 mt-4 border-t border-gray-200">
+                <button onclick="closeReportModal()" class="bg-gray-200 text-gray-700 font-semibold py-2 px-4 rounded-lg hover:bg-gray-300 transition">Close</button>
+                <button onclick="contactParent()" class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition">Contact Parent</button>
             </div>
         </div>
     </div>
 
-
-    <script src="../../assets/script.js"></script>
+    <!-- Scripts -->
+    <script src="../../assets/teacherjs/teacher_include.js"></script>
+    <script src="../../assets/teacherjs/teacher.js"></script>
 </body>
 </html>
 

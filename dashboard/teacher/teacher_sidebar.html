@@ -1,0 +1,54 @@
+<aside class="w-72 bg-[#0F172A] p-6 flex flex-col text-white">
+    <div class="text-center mb-12">
+        <a href="../../index.html" class="text-3xl font-bold tracking-wider text-white">EduCare</a>
+    </div>
+    <nav id="sidebar-nav" class="flex flex-col space-y-3">
+        <a href="teacher.html" class="sidebar-link">
+            <i class="fas fa-tachometer-alt w-6 text-center"></i>
+            <span class="ml-4">Dashboard</span>
+        </a>
+        <a href="my-classes.html" class="sidebar-link">
+            <i class="fas fa-chalkboard-teacher w-6 text-center"></i>
+            <span class="ml-4">My Classes</span>
+        </a>
+        <a href="assign-tasks.html" class="sidebar-link">
+            <i class="fas fa-tasks w-6 text-center"></i>
+            <span class="ml-4">Assign Tasks</span>
+        </a>
+        <a href="student-reports.html" class="sidebar-link">
+            <i class="fas fa-chart-bar w-6 text-center"></i>
+            <span class="ml-4">Student Reports</span>
+        </a>
+        <a href="communication.html" class="sidebar-link">
+            <i class="fas fa-comments w-6 text-center"></i>
+            <span class="ml-4">Communication</span>
+        </a>
+    </nav>
+    <div class="mt-auto text-center">
+        <button onclick="logout()" class="w-full bg-slate-600 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-lg transition">
+            Logout
+        </button>
+    </div>
+</aside>
+
+<style>
+/* --- Sidebar Styling --- */
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    color: #cbd5e1; /* slate-300 */
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.sidebar-link:hover {
+    background-color: #1E293B; /* slate-800 */
+    color: white;
+}
+.sidebar-link.active {
+    background-color: #334155; /* slate-700 */
+    color: white;
+    font-weight: 600;
+}
+</style>

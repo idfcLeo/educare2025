@@ -1,0 +1,23 @@
+/* --- Base Styles & Fonts --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    opacity: 0; /* Initially hidden for page transitions */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* --- Page Transitions --- */
+body.body-fade-in {
+    opacity: 1;
+}
+body.body-fade-out {
+    opacity: 0;
+}
+
+/* --- General Card Styling --- */
+.dashboard-card {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: all 0.3s ease;
+}
